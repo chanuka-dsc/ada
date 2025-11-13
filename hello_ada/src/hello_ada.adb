@@ -1,31 +1,18 @@
-with Ada.Text_IO;         use Ada.Text_IO;
-with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Text_IO;       use Ada.Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
-procedure Rt_Demo is
-   type Small_Int is range 0 .. 100;
-   X : Small_Int := 10;
-   Y : Small_Int := 20;
-
-   type Int_Array is array (Positive range <>) of Integer;
-   A : Int_Array := (1, 2, 3, 4, 5);
-
-   Sum : Integer := 0;
+procedure Hello_ada is
+   C : Float := 20.0;
+   F : Float;
 begin
-   Put_Line ("X + Y = ");
-   Put (Integer (X + Y));
-   New_Line;
 
-   Put_Line ("Array content: ");
-   for I in A'Range loop
-      Put (A (I));
-      Put ("  ");
-   end loop;
+   F := (C * 9.0 / 5.0) + 32.0;
 
 
-   for I in A'Range loop
-      Sum := Sum + A(I);
-   end loop;
-   New_Line;
-   Put_Line ("Array Sum: " & Sum'Image);
+   Put ("Celsius ");
+   Put (C, Fore => 1, Aft => 1, Exp => 0);
+   Put (" is ");
+   Put (F, Fore => 1, Aft => 1, Exp => 0);
+   Put_Line (" in Fahrenheit");
 
-end Rt_Demo;
+end Hello_ada;
